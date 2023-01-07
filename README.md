@@ -78,21 +78,12 @@ Create a DataFrame that lists the average reading score for students of each yea
 
 Create a table that breaks down school performance based on average spending ranges (per student).
 
-- Use the code provided below to create four bins with reasonable cutoff values to group school spending.
+- Use below four bins with reasonable cutoff values to group school spending.
 
 spending_bins = [0, 585, 630, 645, 680]
 labels = ["<$585", "$585-630", "$630-645", "$645-680"]
 
-
 - Use pd.cut to categorise spending based on the bins.
-Use the following code to then calculate mean scores per spending range.
-
-spending_maths_scores = school_spending_df.groupby(["Spending Ranges (Per Student)"]).mean()["Average Maths Score"]
-spending_reading_scores = school_spending_df.groupby(["Spending Ranges (Per Student)"]).mean()["Average Reading Score"]
-spending_passing_maths = school_spending_df.groupby(["Spending Ranges (Per Student)"]).mean()["% Passing Maths"]
-spending_passing_reading = school_spending_df.groupby(["Spending Ranges (Per Student)"]).mean()["% Passing Reading"]
-overall_passing_spending = school_spending_df.groupby(["Spending Ranges (Per Student)"]).mean()["% Overall Passing"]
-
 
 - Use the scores above to create a DataFrame called spending_summary.
 
@@ -110,17 +101,18 @@ Average reading score
 
 - Scores by School Size
 
-Use the following code to bin the per_school_summary.
+- Use below four bins with reasonable cutoff values to group by school size
 
 size_bins = [0, 1000, 2000, 5000]
 labels = ["Small (<1000)", "Medium (1000-2000)", "Large (2000-5000)"]
-Use pd.cut on the "Total Students" column of the per_school_summary DataFrame.
 
-Create a DataFrame called size_summary that breaks down school performance based on school size (small, medium, or large).
+Use pd.cut on the "Total Students" column of the school_summary DataFrame.
+
+Create a DataFrame  that breaks down school performance based on school size (small, medium, or large).
 
 - Scores by School Type
 
-Use the per_school_summary DataFrame from the previous step to create a new DataFrame called type_summary.
+Use the school_summary DataFrame from the previous step to create a new DataFrame 
 
 This new DataFrame should show school performance based on the "School Type".
 
